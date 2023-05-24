@@ -18,6 +18,7 @@ module Zombie
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.autoload_paths += %W(#{Rails.root}/app/docs)
   end
 
   RESOURCES = YAML::load_file(File.join(Rails.root, 'lib', 'assets', 'resources.yml'))

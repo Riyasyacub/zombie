@@ -40,6 +40,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.0.4.3, rbenv: 3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.4.3, rbenv: 3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.4, rbenv: 3.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="apipie-rails (v1.0.0, rbenv: 3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, rbenv: 3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.16.0, rbenv: 3.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, rbenv: 3.2.0) [gem]" level="application" />
@@ -210,6 +211,22 @@
                 </subtasks>
               </RakeTaskImpl>
               <RakeTaskImpl description="" fullCommand="active_storage:update" id="update" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="apipie">
+            <subtasks>
+              <RakeTaskImpl description="Generate cache to avoid production dependencies on markup languages" fullCommand="apipie:cache" id="cache" />
+              <RakeTaskImpl description="Generate CLI client for API documented with apipie gem" fullCommand="apipie:client" id="client" />
+              <RakeTaskImpl description="Convert your examples from the old yaml into the new json format" fullCommand="apipie:convert_examples" id="convert_examples" />
+              <RakeTaskImpl description="Did swagger output change since the last execution of this task?" fullCommand="apipie:did_swagger_change[version,swagger_content_type_input,filename_suffix]" id="did_swagger_change[version,swagger_content_type_input,filename_suffix]" />
+              <RakeTaskImpl description="Generate static documentation" fullCommand="apipie:static[version]" id="static[version]" />
+              <RakeTaskImpl description="Generate static documentation json" fullCommand="apipie:static_json[version]" id="static_json[version]" />
+              <RakeTaskImpl description="Generate static swagger json" fullCommand="apipie:static_swagger_json[version,swagger_content_type_input,filename_suffix]" id="static_swagger_json[version,swagger_content_type_input,filename_suffix]" />
+              <RakeTaskImpl description="Update api description in controllers base on routes" fullCommand="apipie:update_from_routes" id="update_from_routes" />
+              <RakeTaskImpl description="" fullCommand="apipie:did_swagger_change" id="did_swagger_change" />
+              <RakeTaskImpl description="" fullCommand="apipie:static" id="static" />
+              <RakeTaskImpl description="" fullCommand="apipie:static_json" id="static_json" />
+              <RakeTaskImpl description="" fullCommand="apipie:static_swagger_json" id="static_swagger_json" />
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl id="app">
