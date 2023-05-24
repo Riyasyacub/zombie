@@ -1,0 +1,15 @@
+fiji_water:
+  name: Fiji Water
+  points: 14
+
+campbell_soup:
+  name: Campbell Soup
+  points: 12
+
+first_aid:
+  name: First Aid Pouch
+  points: 10
+
+ak47:
+  name: AK47
+  points: 8
