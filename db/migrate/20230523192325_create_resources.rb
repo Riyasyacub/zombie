@@ -4,7 +4,6 @@ class CreateResources < ActiveRecord::Migration[7.0]
       t.references :user, foreign_key: true, type: :uuid
       t.string :name
       t.float :quantity, default: 0.0
-      t.float :points, default: 0.0
       t.timestamps
     end
   end

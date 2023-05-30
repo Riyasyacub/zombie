@@ -34,6 +34,12 @@ class UsersController < ApplicationController
   param :id, String, required: true, desc: "Id of the user"
   error code: 500, desc: 'Internal Server Error'
   error code: 422, desc: 'Validation Errors'
+  param :name, String, required: true
+  param :age, Integer, required: true
+  param :gender, String, required: true
+  param :latitude, Float, required: true
+  param :longitude, Float, required: true
+  param :items, Hash, required: true
   returns :user_details, code: 200, desc: "Created User Details"
   user_create
 
@@ -49,6 +55,9 @@ class UsersController < ApplicationController
   error code: 500, desc: 'Internal Server Error'
   error code: 404, desc: 'User Not Found'
   error code: 422, desc: 'Validation Errors'
+  param :latitude, Float, required: false
+  param :longitude, Float, required: false
+  param :infected, Boolean, required: false
   returns :user_details, code: 200, desc: "Update User Details"
   user_update
 
@@ -88,6 +97,6 @@ class UsersController < ApplicationController
   end
 
   def user_update_params
-    params.permit( :latitude, :longitude)
+    params.permit( :latitude, :longitude, :infected)
   end
 end

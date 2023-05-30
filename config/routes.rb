@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   scope :api, defaults: { format: :json } do
     resources :users
+    resources :trades, only: [:create]
   end
 end

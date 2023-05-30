@@ -13,7 +13,8 @@ module Docs::UsersControllerDocs
                       "age": 23,
                       "gender": "male",
                       "latitude": 89.734644,
-                      "longitude": 24.897623
+                      "longitude": 24.897623,
+                      "infected": false  
                     },
                     {
                       "id": "fcfd91d1-8878-4203-a344-820cf66ca7c4",
@@ -21,7 +22,8 @@ module Docs::UsersControllerDocs
                       "age": 29,
                       "gender": "female",
                       "latitude": 22.734644,
-                      "longitude": 12.897623
+                      "longitude": 12.897623,
+                      "infected": true
                     }
                   ]
         }
@@ -42,7 +44,8 @@ module Docs::UsersControllerDocs
           "age": 23,
           "gender": "male",
           "latitude": 89.734644,
-          "longitude": 24.897623
+          "longitude": 24.897623,
+          "infected": false
         }
         404
         {
@@ -73,7 +76,8 @@ module Docs::UsersControllerDocs
           "age": 23,
           "gender": "male",
           "latitude": 89.734644,
-          "longitude": 24.897623
+          "longitude": 24.897623,
+          "infected": false
         }
         404
         {
@@ -100,6 +104,7 @@ module Docs::UsersControllerDocs
         payload
         {
           "longitude": 84.897623,
+          "infected": true
         }
         200
         {
@@ -108,7 +113,8 @@ module Docs::UsersControllerDocs
           "age": 23,
           "gender": "male",
           "latitude": 89.734644,
-          "longitude": 24.897623
+          "longitude": 24.897623,
+          "infected": true
         }
         422
         {
