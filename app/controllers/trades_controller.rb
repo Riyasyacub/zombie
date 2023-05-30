@@ -1,5 +1,30 @@
 class TradesController < ApplicationController
+  include Docs::TradesControllerDocs
   before_action :set_from_user, :set_to_user, :infected_user?, :validate_params, :can_trade?
+
+  api :POST, 'api/trades', 'Create a trade'
+  param :from, Hash, required: true, desc: 'From user details' do
+    param :id, Integer, required: true, desc: 'ID of the from user'
+    param :items, Array, required: true, desc: 'Items to be traded' do
+      param :name, String, required: true, desc: 'Name of the item'
+      param :quantity, Integer, required: true, desc: 'Quantity of the item'
+    end
+  end
+  param :to, Hash, required: true, desc: 'To user details' do
+    param :id, Integer, required: true, desc: 'ID of the to user'
+    param :items, Array, required: true, desc: 'Items to be traded' do
+      param :name, String, required: true, desc: 'Name of the item'
+      param :quantity, Integer, required: true, desc: 'Quantity of the item'
+    end
+  end
+  returns code: 200, desc: 'Trade Successful'
+  error code: 404, desc: 'From user not found'
+  error code: 404, desc: 'To user not found'
+  error code: 422, desc: 'Infected user cannot perform trade'
+  error code: 422, desc: 'Validation errors or insufficient items'
+  error code: 422, desc: 'Points of items of both users must be equal to trade'
+  error code: 500, desc: 'Internal server error'
+  create_trade
 
   def create
     @from.alter_resource(trade_params.dig(:to, :items), trade_params.dig(:from, :items))
