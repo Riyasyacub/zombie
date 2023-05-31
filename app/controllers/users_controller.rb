@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   error code: 422, desc: 'Validation Errors'
   param :latitude, Float, required: false
   param :longitude, Float, required: false
-  param :infected, Boolean, required: false
+  param :infected, String, required: false
   returns :user_details, code: 200, desc: "Update User Details"
   user_update
 

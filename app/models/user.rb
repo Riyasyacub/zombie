@@ -8,6 +8,9 @@ class User < ApplicationRecord
 
   before_create :create_resources
 
+  scope :infected, -> { where(infected: true) }
+  scope :non_infected, -> { where(infected: false) }
+
   def alter_resource(add_items, remove_items)
     return if self.infected?
 
@@ -41,6 +44,5 @@ class User < ApplicationRecord
       self.resources.new(name:     name,
                          quantity: quantity)
     end
-    binding.pry
   end
 end

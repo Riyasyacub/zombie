@@ -6,4 +6,5 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.create(name: "Naruto", age: 24, gender: "male", latitude: 15.764732, longitude: 78.7665383, items: {"Fiji Water": 10, "AK47": 3})
+User.create(name: "Naruto", age: 24, gender: "male", latitude: 15.764732, longitude: 78.766538, items: {"Fiji Water": 10, "AK47": 3})
+User.create(name: 'Jiraya', age: 52, gender: 'male', latitude: 16.875590, longitude: 77.875456, items: {"Fiji Water": 2, "First Aid Pouch": 5})

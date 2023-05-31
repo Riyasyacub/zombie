@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   scope :api, defaults: { format: :json } do
     resources :users
     resources :trades, only: [:create]
+    resources :reports, only: [:index]
   end
 end

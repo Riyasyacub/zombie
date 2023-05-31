@@ -2,7 +2,7 @@ class TradesController < ApplicationController
   include Docs::TradesControllerDocs
   before_action :set_from_user, :set_to_user, :infected_user?, :validate_params, :can_trade?
 
-  api :POST, 'api/trades', 'Create a trade'
+  api :POST, '/trades', 'Create a trade'
   param :from, Hash, required: true, desc: 'From user details' do
     param :id, Integer, required: true, desc: 'ID of the from user'
     param :items, Array, required: true, desc: 'Items to be traded' do
